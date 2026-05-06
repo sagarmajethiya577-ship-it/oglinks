@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Links Zone</title>
+
+<style>
+body {
+    background:#111;
+    margin:0;
+    font-family:sans-serif;
+}
+
+.home-container {
+    display:grid;
+    grid-template-columns: repeat(auto-fill, minmax(160px,1fr));
+    gap:12px;
+    padding:12px;
+}
+
+.post-card {
+    background:#1c1c1c;
+    border-radius:10px;
+    overflow:hidden;
+    text-align:center;
+    transition:0.2s;
+}
+
+.post-card:hover {
+    transform:scale(1.03);
+}
+
+.post-card img {
+    width:100%;
+    height:auto;
+    display:block;
+}
+
+.post-card button {
+    width:90%;
+    margin:6px;
+    padding:8px;
+    border:none;
+    border-radius:6px;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+.open-btn {
+    background:#007bff;
+    color:white;
+}
+
+.open-btn:hover {
+    background:#0056b3;
+}
+
+.copy-btn {
+    background:#00ff88;
+    color:#000;
+}
+
+.copy-btn:hover {
+    background:#00cc6a;
+}
+
+.pagination {
+    display:flex;
+    justify-content:center;
+    gap:5px;
+    margin:25px;
+    flex-wrap:wrap;
+}
+
+.page-btn, .page-num {
+    padding:8px 12px;
+    border:1px solid #00ff88;
+    color:#00ff88;
+    text-decoration:none;
+    border-radius:4px;
+}
+
+.page-num.active {
+    background:#00ff88;
+    color:#000;
+    font-weight:bold;
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="home-container">
+
+        <div class="post-card">
+            <img src="https://i.ibb.co/VpHy5Gky/7991b9cd4253.jpg">
+            
+            <button class="open-btn" onclick="openLink('https://www.diskwala.com/app/69fadbac69eabf87202ee3a0')">Open Link</button>
+            <button class="copy-btn" onclick="copyLink('https://www.diskwala.com/app/69fadbac69eabf87202ee3a0')">Copy Link</button>
+        </div>
+        
+        <div class="post-card">
+            <img src="https://i.ibb.co/TDft5n3C/e0ad8274a2c2.jpg">
+            
+            <button class="open-btn" onclick="openLink('https://www.diskwala.com/app/69fad99a69eabf87202ed773')">Open Link</button>
+            <button class="copy-btn" onclick="copyLink('https://www.diskwala.com/app/69fad99a69eabf87202ed773')">Copy Link</button>
+        </div>
+        
+        <div class="post-card">
+            <img src="https://i.ibb.co/8gVBQfns/25161a06abd2.jpg">
+            
+            <button class="open-btn" onclick="openLink('https://www.diskwala.com/app/69fad74a69eabf87202eb8aa')">Open Link</button>
+            <button class="copy-btn" onclick="copyLink('https://www.diskwala.com/app/69fad74a69eabf87202eb8aa')">Copy Link</button>
+        </div>
+        
+        <div class="post-card">
+            <img src="https://i.ibb.co/Psv4FGDm/868564cc3d60.jpg">
+            
+            <button class="open-btn" onclick="openLink('https://www.diskwala.com/app/69fad71369eabf87202eb712')">Open Link</button>
+            <button class="copy-btn" onclick="copyLink('https://www.diskwala.com/app/69fad71369eabf87202eb712')">Copy Link</button>
+        </div>
+        
+        <div class="post-card">
+            <img src="https://i.ibb.co/Jjh4GcRm/7193d5139156.jpg">
+            
+            <button class="open-btn" onclick="openLink('https://www.diskwala.com/app/69fad6ad69eabf87202eb442')">Open Link</button>
+            <button class="copy-btn" onclick="copyLink('https://www.diskwala.com/app/69fad6ad69eabf87202eb442')">Copy Link</button>
+        </div>
+        
+        <div class="post-card">
+            <img src="https://i.ibb.co/QskLxgB/b45985fc0a0a.jpg">
+            
+            <button class="open-btn" onclick="openLink('https://www.diskwala.com/app/69fad68069eabf87202eb18a')">Open Link</button>
+            <button class="copy-btn" onclick="copyLink('https://www.diskwala.com/app/69fad68069eabf87202eb18a')">Copy Link</button>
+        </div>
+        
+        <div class="post-card">
+            <img src="https://i.ibb.co/6Rwdy04v/4c58260ac44c.jpg">
+            
+            <button class="open-btn" onclick="openLink('https://www.diskwala.com/app/69fad5ec69eabf87202eab2a')">Open Link</button>
+            <button class="copy-btn" onclick="copyLink('https://www.diskwala.com/app/69fad5ec69eabf87202eab2a')">Copy Link</button>
+        </div>
+        
+        <div class="post-card">
+            <img src="https://i.ibb.co/wNkLTHfK/0fb3d9f3eaae.jpg">
+            
+            <button class="open-btn" onclick="openLink('https://www.diskwala.com/app/69fad56169eabf87202ea677')">Open Link</button>
+            <button class="copy-btn" onclick="copyLink('https://www.diskwala.com/app/69fad56169eabf87202ea677')">Copy Link</button>
+        </div>
+        
+        <div class="post-card">
+            <img src="https://i.ibb.co/chrqw9JG/29cd7850ab3a.jpg">
+            
+            <button class="open-btn" onclick="openLink('https://www.diskwala.com/app/69fad51369eabf87202ea593')">Open Link</button>
+            <button class="copy-btn" onclick="copyLink('https://www.diskwala.com/app/69fad51369eabf87202ea593')">Copy Link</button>
+        </div>
+        
+        <div class="post-card">
+            <img src="https://i.ibb.co/TB9r6R1C/832f401e59e0.jpg">
+            
+            <button class="open-btn" onclick="openLink('https://www.diskwala.com/app/69fad4e569eabf87202ea581')">Open Link</button>
+            <button class="copy-btn" onclick="copyLink('https://www.diskwala.com/app/69fad4e569eabf87202ea581')">Copy Link</button>
+        </div>
+        
+        <div class="post-card">
+            <img src="https://i.ibb.co/LdCskstT/8836415ca66b.jpg">
+            
+            <button class="open-btn" onclick="openLink('https://www.diskwala.com/app/69fad43c69eabf87202e9b6d')">Open Link</button>
+            <button class="copy-btn" onclick="copyLink('https://www.diskwala.com/app/69fad43c69eabf87202e9b6d')">Copy Link</button>
+        </div>
+        
+        <div class="post-card">
+            <img src="https://i.ibb.co/LXzXhMJX/e489a2491285.jpg">
+            
+            <button class="open-btn" onclick="openLink('https://www.diskwala.com/app/69fad3e169eabf87202e99cc')">Open Link</button>
+            <button class="copy-btn" onclick="copyLink('https://www.diskwala.com/app/69fad3e169eabf87202e99cc')">Copy Link</button>
+        </div>
+        
+        <div class="post-card">
+            <img src="https://i.ibb.co/1YLTFSRq/1b754e6e6473.jpg">
+            
+            <button class="open-btn" onclick="openLink('https://www.diskwala.com/app/69fad3b469eabf87202e981c')">Open Link</button>
+            <button class="copy-btn" onclick="copyLink('https://www.diskwala.com/app/69fad3b469eabf87202e981c')">Copy Link</button>
+        </div>
+        
+        <div class="post-card">
+            <img src="https://i.ibb.co/sLDFbpt/3c52cef7dace.jpg">
+            
+            <button class="open-btn" onclick="openLink('https://www.diskwala.com/app/69fad37069eabf87202e9498')">Open Link</button>
+            <button class="copy-btn" onclick="copyLink('https://www.diskwala.com/app/69fad37069eabf87202e9498')">Copy Link</button>
+        </div>
+        
+        <div class="post-card">
+            <img src="https://i.ibb.co/whrWpt1b/24ff59e8244c.jpg">
+            
+            <button class="open-btn" onclick="openLink('https://www.diskwala.com/app/69fad32969eabf87202e908a')">Open Link</button>
+            <button class="copy-btn" onclick="copyLink('https://www.diskwala.com/app/69fad32969eabf87202e908a')">Copy Link</button>
+        </div>
+        
+        <div class="post-card">
+            <img src="https://i.ibb.co/7NdJ1tPv/d877c0ffffa4.jpg">
+            
+            <button class="open-btn" onclick="openLink('https://www.diskwala.com/app/69fad21969eabf87202e8061')">Open Link</button>
+            <button class="copy-btn" onclick="copyLink('https://www.diskwala.com/app/69fad21969eabf87202e8061')">Copy Link</button>
+        </div>
+        
+        <div class="post-card">
+            <img src="https://i.ibb.co/HLxH2N9d/5e55a92cc9ab.jpg">
+            
+            <button class="open-btn" onclick="openLink('https://www.diskwala.com/app/69fad12f69eabf87202e78cc')">Open Link</button>
+            <button class="copy-btn" onclick="copyLink('https://www.diskwala.com/app/69fad12f69eabf87202e78cc')">Copy Link</button>
+        </div>
+        
+        <div class="post-card">
+            <img src="https://i.ibb.co/5hDgqhF0/02109b496e90.jpg">
+            
+            <button class="open-btn" onclick="openLink('https://www.diskwala.com/app/69fad11969eabf87202e788d')">Open Link</button>
+            <button class="copy-btn" onclick="copyLink('https://www.diskwala.com/app/69fad11969eabf87202e788d')">Copy Link</button>
+        </div>
+        
+        <div class="post-card">
+            <img src="https://i.ibb.co/CKNb8HZk/b5e508d0fd71.jpg">
+            
+            <button class="open-btn" onclick="openLink('https://www.diskwala.com/app/69fad0f869eabf87202e77eb')">Open Link</button>
+            <button class="copy-btn" onclick="copyLink('https://www.diskwala.com/app/69fad0f869eabf87202e77eb')">Copy Link</button>
+        </div>
+        
+        <div class="post-card">
+            <img src="https://i.ibb.co/v4g0mYCS/1003c99bb69c.jpg">
+            
+            <button class="open-btn" onclick="openLink('https://www.diskwala.com/app/69fad07b69eabf87202e72c9')">Open Link</button>
+            <button class="copy-btn" onclick="copyLink('https://www.diskwala.com/app/69fad07b69eabf87202e72c9')">Copy Link</button>
+        </div>
+        
+</div>
+
+<div class="pagination"><a href="page14.html" class="page-btn">←</a><a href="index.html" class="page-num ">1</a><a href="page2.html" class="page-num ">2</a><a href="page3.html" class="page-num ">3</a><a href="page4.html" class="page-num ">4</a><a href="page5.html" class="page-num ">5</a><a href="page6.html" class="page-num ">6</a><a href="page7.html" class="page-num ">7</a><a href="page8.html" class="page-num ">8</a><a href="page9.html" class="page-num ">9</a><a href="page10.html" class="page-num ">10</a><a href="page11.html" class="page-num ">11</a><a href="page12.html" class="page-num ">12</a><a href="page13.html" class="page-num ">13</a><a href="page14.html" class="page-num ">14</a><a href="page15.html" class="page-num active">15</a><a href="page16.html" class="page-num ">16</a><a href="page16.html" class="page-btn">→</a></div>
+
+<script>
+function copyLink(link) {
+    navigator.clipboard.writeText(link);
+    alert("Link copied!");
+}
+
+function openLink(link) {
+    window.open(link, "_blank");
+}
+</script>
+
+</body>
+</html>
