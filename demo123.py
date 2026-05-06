@@ -3,23 +3,23 @@ import json
 import math
 
 POSTS_PER_PAGE = 200
-JSON_PREFIX = "posts"   # posts1.json, posts2.json...
+JSON_PREFIX = "posts"
 
 all_posts = []
 
-# 🔹 Load all JSON files
+# Load JSON
 json_files = sorted([f for f in os.listdir() if f.startswith(JSON_PREFIX) and f.endswith(".json")])
 
 for file in json_files:
     try:
-        with open(file, "r", encoding="utf-8") as f:
+        with open(file, "r") as f:
             data = json.load(f)
             all_posts.extend(data)
     except:
-        continue
+        pass
 
-# 🔹 Reverse (latest first)
-all_posts = list(reversed(all_posts))
+# 🔥 SORT BY TIME (LATEST FIRST)
+all_posts.sort(key=lambda x: x.get("time", 0), reverse=True)
 
 total_pages = math.ceil(len(all_posts) / POSTS_PER_PAGE)
 
@@ -42,100 +42,35 @@ for page in range(total_pages):
         </div>
         """
 
-    # 🔹 Pagination
-    pagination = '<div class="pagination">'
-
-    if current_page > 1:
-        prev = "index.html" if current_page == 2 else f"page{current_page-1}.html"
-        pagination += f'<a href="{prev}">←</a>'
-
-    for i in range(1, total_pages + 1):
-        link = "index.html" if i == 1 else f"page{i}.html"
-        active = "active" if i == current_page else ""
-        pagination += f'<a href="{link}" class="{active}">{i}</a>'
-
-    if current_page < total_pages:
-        pagination += f'<a href="page{current_page+1}.html">→</a>'
-
-    pagination += "</div>"
-
-    # 🔹 HTML Template (NO HEADER / NO SEARCH)
     html = f"""<!DOCTYPE html>
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Links Zone</title>
-
 <style>
-body {{ background:#111; margin:0; font-family:sans-serif; }}
+body {{ background:#111; }}
 
 .home-container {{
 display:grid;
 grid-template-columns: repeat(auto-fill, minmax(150px,1fr));
 gap:10px;
-padding:10px;
-}}
-
-.post-card {{
-background:#1c1c1c;
-border-radius:10px;
-overflow:hidden;
-text-align:center;
 }}
 
 .post-card img {{
-  width:100%;
-  aspect-ratio: 2/3;
-  object-fit: contain;
-  background:#000;
-}}
-
-.post-card button {{
-width:90%;
-margin:10px;
-padding:8px;
-border:none;
-border-radius:6px;
-background:#00ff88;
-color:#000;
-font-weight:bold;
-}}
-
-.pagination {{
-display:flex;
-justify-content:center;
-gap:5px;
-margin:20px;
-flex-wrap:wrap;
-}}
-
-.pagination a {{
-padding:6px 10px;
-border:1px solid #00ff88;
-color:#00ff88;
-text-decoration:none;
-}}
-
-.pagination .active {{
-background:#00ff88;
-color:#000;
+width:100%;
+height:auto;
 }}
 </style>
-
 </head>
-
 <body>
 
 <div class="home-container">
 {cards_html}
 </div>
 
-{pagination}
-
 <script>
 function copyLink(link) {{
-    navigator.clipboard.writeText(link);
-    alert("Copied!");
+navigator.clipboard.writeText(link);
+alert("Copied!");
 }}
 </script>
 
@@ -145,7 +80,7 @@ function copyLink(link) {{
 
     filename = "index.html" if page == 0 else f"page{page+1}.html"
 
-    with open(filename, "w", encoding="utf-8") as f:
+    with open(filename, "w") as f:
         f.write(html)
 
-print("✅ Done! Multi JSON system ready.")
+print("✅ Done! Sorted latest posts on top.")
