@@ -14,7 +14,7 @@ api_hash = '9693b684498bf93a949bf50ba0573fc3'
 phone = '+919512339243'
 
 IMGBB_API_KEY = "85fca1591e03f0ea1888aa7256b07efb"
-MAX_POSTS = 10 
+MAX_POSTS = 200
 
 channel_links = [
     'https://t.me/+480FwuEWpqZiZGY1',
