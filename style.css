@@ -1,0 +1,172 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #0f0f0f;
+  color: #ffffff;
+  font-family: Arial, sans-serif;
+  line-height: 1.7;
+}
+
+/* ================= HEADER ================= */
+
+.site-header {
+  text-align: center;
+  padding: 20px 10px;
+  background: #000;
+  border-bottom: 1px solid #222;
+}
+
+.site-title {
+  display: inline-block;
+  text-decoration: none;
+  font-size: 28px;
+  font-weight: bold;
+  color: #00ffd5;
+  letter-spacing: 1px;
+}
+
+.site-title:hover {
+  color: #00c9aa;
+}
+
+.tagline {
+  margin-top: 5px;
+  color: #aaa;
+  font-size: 14px;
+}
+
+/* ================= HOME PAGE ================= */
+
+.home-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+  padding: 15px;
+  max-width: 1000px;
+  margin: auto;
+}
+
+.post-card {
+  background: #1a1a1a;
+  border-radius: 12px;
+  overflow: hidden;
+  text-decoration: none;
+  color: #fff;
+  box-shadow: 0 4px 12px rgba(0,0,0,.5);
+  transition: transform .2s ease;
+}
+
+.post-card:hover {
+  transform: translateY(-4px);
+}
+
+.post-card img {
+  width: 100%;
+  display: block;
+}
+
+.post-card h2 {
+  font-size: 15px;
+  padding: 10px;
+  margin: 0;
+}
+
+/* ================= PAGINATION ================= */
+
+.pagination {
+  text-align: center;
+  margin: 25px 0;
+}
+
+.pagination a,
+.pagination span {
+  display: inline-block;
+  margin: 4px;
+  padding: 6px 10px;
+  font-size: 14px;
+  text-decoration: none;
+  border-radius: 6px;
+}
+
+.pagination a {
+  border: 1px solid #00ffd5;
+  color: #00ffd5;
+}
+
+.pagination a:hover {
+  background: #00ffd5;
+  color: #000;
+}
+
+.pagination .active {
+  background: #00ffd5;
+  color: #000;
+  font-weight: bold;
+}
+
+/* ================= POST PAGE ================= */
+
+.post-container {
+  max-width: 800px;
+  margin: auto;
+  padding: 15px;
+}
+
+.post-container img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 15px auto;
+  border-radius: 8px;
+}
+
+.post-container h1 {
+  display: none;
+}
+
+/* ================= FOOTER ================= */
+
+.site-footer {
+  text-align: center;
+  padding: 15px;
+  font-size: 13px;
+  color: #aaa;
+  border-top: 1px solid #222;
+  margin-top: 20px;
+}
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 600px) {
+  .home-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+/* ================= SEARCH BOX ================= */
+
+.search-box {
+    text-align: center;
+    margin: 20px 0;
+}
+
+#searchInput {
+    width: 80%;
+    max-width: 500px;
+    padding: 12px 20px;
+    border-radius: 25px;
+    border: 2px solid #ff4757; /* Eye-catching color */
+    background: #2f3542;
+    color: white;
+    font-size: 16px;
+    outline: none;
+    transition: 0.3s;
+}
+
+#searchInput:focus {
+    box-shadow: 0 0 10px #ff4757;
+    width: 85%;
+}
+
