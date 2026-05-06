@@ -1,22 +1,84 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Links Zone</title>
+
 <style>
-body { background:#111; }
+body {
+    background:#111;
+    margin:0;
+    font-family:sans-serif;
+}
 
 .home-container {
-display:grid;
-grid-template-columns: repeat(auto-fill, minmax(150px,1fr));
-gap:10px;
+    display:grid;
+    grid-template-columns: repeat(auto-fill, minmax(160px,1fr));
+    gap:12px;
+    padding:12px;
+}
+
+.post-card {
+    background:#1c1c1c;
+    border-radius:10px;
+    overflow:hidden;
+    text-align:center;
+    transition:0.2s;
+}
+
+.post-card:hover {
+    transform:scale(1.03);
 }
 
 .post-card img {
-width:100%;
-height:auto;
+    width:100%;
+    height:auto;
+    display:block;
 }
+
+.post-card button {
+    width:90%;
+    margin:10px;
+    padding:8px;
+    border:none;
+    border-radius:6px;
+    background:#00ff88;
+    color:#000;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+.post-card button:hover {
+    background:#00cc6a;
+}
+
+.pagination {
+    display:flex;
+    justify-content:center;
+    gap:5px;
+    margin:25px;
+    flex-wrap:wrap;
+}
+
+.page-btn, .page-num {
+    padding:8px 12px;
+    border:1px solid #00ff88;
+    color:#00ff88;
+    text-decoration:none;
+    border-radius:4px;
+}
+
+.page-num.active {
+    background:#00ff88;
+    color:#000;
+    font-weight:bold;
+}
+
 </style>
+
 </head>
+
 <body>
 
 <div class="home-container">
@@ -408,10 +470,12 @@ height:auto;
         
 </div>
 
+<div class="pagination"><a href="index.html" class="page-num active">1</a></div>
+
 <script>
 function copyLink(link) {
-navigator.clipboard.writeText(link);
-alert("Copied!");
+    navigator.clipboard.writeText(link);
+    alert("Link copied!");
 }
 </script>
 
