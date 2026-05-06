@@ -7,7 +7,7 @@ JSON_PREFIX = "posts"
 
 all_posts = []
 
-# 🔹 Load JSON
+# 🔹 Load JSON files
 json_files = sorted([f for f in os.listdir() if f.startswith(JSON_PREFIX) and f.endswith(".json")])
 
 for file in json_files:
@@ -18,7 +18,7 @@ for file in json_files:
     except:
         continue
 
-# 🔥 Latest first (IMPORTANT)
+# 🔥 Latest post top par
 all_posts.sort(key=lambda x: x.get("time", 0), reverse=True)
 
 total_pages = math.ceil(len(all_posts) / POSTS_PER_PAGE)
@@ -38,11 +38,13 @@ for page in range(total_pages):
         cards_html += f"""
         <div class="post-card">
             <img src="{img}">
-            <button onclick="copyLink('{link}')">Copy Link</button>
+            
+            <button class="open-btn" onclick="openLink('{link}')">Open Link</button>
+            <button class="copy-btn" onclick="copyLink('{link}')">Copy Link</button>
         </div>
         """
 
-    # 🔹 Pagination (same as old style)
+    # 🔹 Pagination
     pagination = '<div class="pagination">'
 
     if current_page > 1:
@@ -50,16 +52,16 @@ for page in range(total_pages):
         pagination += f'<a href="{prev}" class="page-btn">←</a>'
 
     for i in range(1, total_pages + 1):
-        link = "index.html" if i == 1 else f"page{i}.html"
+        link_page = "index.html" if i == 1 else f"page{i}.html"
         active = "active" if i == current_page else ""
-        pagination += f'<a href="{link}" class="page-num {active}">{i}</a>'
+        pagination += f'<a href="{link_page}" class="page-num {active}">{i}</a>'
 
     if current_page < total_pages:
         pagination += f'<a href="page{current_page+1}.html" class="page-btn">→</a>'
 
     pagination += "</div>"
 
-    # 🔥 HTML (DESIGN RESTORED)
+    # 🔥 HTML
     html = f"""<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -101,17 +103,29 @@ body {{
 
 .post-card button {{
     width:90%;
-    margin:10px;
+    margin:6px;
     padding:8px;
     border:none;
     border-radius:6px;
-    background:#00ff88;
-    color:#000;
     font-weight:bold;
     cursor:pointer;
 }}
 
-.post-card button:hover {{
+.open-btn {{
+    background:#007bff;
+    color:white;
+}}
+
+.open-btn:hover {{
+    background:#0056b3;
+}}
+
+.copy-btn {{
+    background:#00ff88;
+    color:#000;
+}}
+
+.copy-btn:hover {{
     background:#00cc6a;
 }}
 
@@ -136,7 +150,6 @@ body {{
     color:#000;
     font-weight:bold;
 }}
-
 </style>
 
 </head>
@@ -154,6 +167,10 @@ function copyLink(link) {{
     navigator.clipboard.writeText(link);
     alert("Link copied!");
 }}
+
+function openLink(link) {{
+    window.open(link, "_blank");
+}}
 </script>
 
 </body>
@@ -165,4 +182,4 @@ function copyLink(link) {{
     with open(filename, "w", encoding="utf-8") as f:
         f.write(html)
 
-print("✅ Done! Design restored + latest posts on top.")
+print("✅ Done! Open + Copy buttons added.")
