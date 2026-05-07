@@ -13,12 +13,13 @@ api_id = 34330516
 api_hash = '9693b684498bf93a949bf50ba0573fc3'
 phone = '+919512339243'
 
-IMGBB_API_KEY = "85fca1591e03f0ea1888aa7256b07efb"
+IMGBB_API_KEY = "0abf6d61d3ba547aa94ef21ceb4b3c0a"
 MAX_POSTS_TOTAL = 100 # Total kitne posts nikalne hai
-POSTS_PER_FILE = 500   # Ek file me kitne posts honge
+POSTS_PER_FILE = 600   # Ek file me kitne posts honge
 
 # --- Naye Channels Yahan Add Karein ---
 channel_links = [
+'https://t.me/DesiZip',
     'https://t.me/+480FwuEWpqZiZGY1',
 'https://t.me/+k9XL7lnp2s0yYjk1',
 'https://t.me/+_ClpGVd7sL1jZWY1',
