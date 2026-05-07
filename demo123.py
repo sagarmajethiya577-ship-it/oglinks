@@ -2,7 +2,7 @@ import os
 import json
 import math
 
-POSTS_PER_PAGE = 20
+POSTS_PER_PAGE = 100
 JSON_PREFIX = "posts"
 
 all_posts = []
